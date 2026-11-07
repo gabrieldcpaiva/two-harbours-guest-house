@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import Picture from '../components/Picture.astro';
+import BookingButton from '../components/BookingButton.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import site from '../data/site.json';
+const g = site.gettingHere;
+---
+<Base title="Getting here" description="Reach Two Harbours on Scalpay by bridge from Harris: about ten minutes and seven miles from Tarbert ferry port. Plain travel notes, arrival times and what to expect." path="/getting-here/">
+  <section class="page-intro">
+    <div class="container page-intro__grid">
+      <div><p class="eyebrow">Getting here</p><h1>{g.title}</h1><p class="lead">{g.intro}</p></div>
+      <div class="page-intro__aside"><p>Scalpay is connected to Harris by bridge. The final leg is by road, not by another ferry.</p><p style="margin-top:1rem"><span class="placeholder">{g.placeholders.ferry}</span></p></div>
+    </div>
+  </section>
+  <section class="container" aria-label="The journey">
+    <Picture name="bridge" alt="The bridge between Harris and Scalpay, seen across the sound with rocky green shores on either side." priority widths={[454]} sizes="100vw" className="split__image" />
+    <ol class="journey" style="margin-top:3rem">
+      {g.steps.map((step) => <li><div><h2>{step.title}</h2><p>{step.text.includes('[Ferry routes') ? <><span>{step.text.split(' [Ferry routes')[0]}</span> <span class="placeholder">{g.placeholders.ferry}</span></> : step.text}</p></div></li>)}
+    </ol>
+  </section>
+  <section class="section section--paper" aria-labelledby="times-title">
+    <div class="container">
+      <SectionHeading eyebrow="Times from the brief" title="Near enough to linger on the way." id="times-title" />
+      <div class="rate-table-wrap" tabindex="0" role="region" aria-label="Travel times, scrollable on small screens">
+        <table class="travel-table">
+          <thead><tr><th scope="col">From</th><th scope="col">To</th><th scope="col">Allow</th></tr></thead>
+          <tbody>{g.travelTimes.map((row) => <tr><td>{row.from}</td><td>{row.to}<small>{row.note}</small></td><td>{row.time}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:1rem">These are the property’s stated driving times, not live traffic estimates. Ferry crossings are not included.</p>
+    </div>
+  </section>
+  <section class="section" aria-labelledby="expect-title">
+    <div class="container split">
+      <div><SectionHeading eyebrow="When you arrive" title="A few things to know before the kettle." id="expect-title" /><ul class="expect-list">{g.expect.map((item) => <li>{item}</li>)}</ul></div>
+      <div class="prose">
+        <p><strong>Still to confirm:</strong></p>
+        <p><span class="placeholder">{g.placeholders.directions}</span></p>
+        <p><span class="placeholder">{g.placeholders.airport}</span></p>
+        <p><span class="placeholder">{g.placeholders.bus}</span></p>
+        <p><span class="placeholder">{g.placeholders.winter}</span></p>
+        <p><span class="placeholder">{g.placeholders.map}</span></p>
+      </div>
+    </div>
+  </section>
+  <section class="section section--paper closing" aria-labelledby="travel-closing-title"><div class="container--narrow"><h2 id="travel-closing-title">The bridge is the easy bit.</h2><p>Choose your dates, then let the house send its detailed directions after reservation.</p><BookingButton label="Book direct" /></div></section>
+</Base>

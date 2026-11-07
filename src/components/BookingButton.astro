@@ -1,0 +1,8 @@
+---
+import site from '../data/site.json';
+interface Props { label?: string; className?: string; }
+const { label = 'Book direct', className = '' } = Astro.props;
+---
+<a class={`button ${className}`} href={site.bookingUrl} target="_blank" rel="noopener noreferrer">
+  {label}<span class="button__arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens the existing booking page in a new tab)</span>
+</a>

@@ -1,0 +1,210 @@
+{
+  "name": "Two Harbours",
+  "fullName": "Two Harbours Boutique Guest House",
+  "tagline": "A guest house between two harbours, on the island of Scalpay.",
+  "location": "Scalpay · Isle of Harris · Outer Hebrides",
+  "address": ["Two Harbours Guest House", "The Old Manse", "Eilean Siar", "HS4 3XU"],
+  "phone": "+44 7831 313729",
+  "phoneHref": "tel:+447831313729",
+  "email": "enquiries@twoharbours.com",
+  "bookingsEmail": "bookings@twoharbours.com",
+  "bookingUrl": "https://www.twoharbours.com/availability.php",
+  "licence": "STL: ES01347F",
+  "navigation": [
+    { "label": "Rooms", "href": "/rooms/" },
+    { "label": "The house", "href": "/the-house/" },
+    { "label": "Getting here", "href": "/getting-here/" },
+    { "label": "Enquire", "href": "/enquire/" }
+  ],
+  "home": {
+    "hero": {
+      "eyebrow": "Scalpay · Isle of Harris",
+      "title": "Between two harbours, the world can wait.",
+      "intro": "A granite-walled Victorian house, three en-suite rooms and a Hebridean welcome. Stay on Scalpay, with Harris and Lewis close at hand.",
+      "image": "house",
+      "alt": "Two Harbours Guest House beside its mature garden, with the North Harbour and Harris hills beyond.",
+      "caption": "The Old Manse, between Scalpay’s North and South Harbours"
+    },
+    "statement": {
+      "eyebrow": "The stay, simply",
+      "title": "Three rooms. A large garden. Nothing you do not need.",
+      "paragraphs": [
+        "Two Harbours is a thoughtfully renovated Victorian house between the two harbours of Scalpay. Expect modern comforts, historic charm and a personal meet-and-greet when you arrive.",
+        "Breakfast is freshly prepared in the farmhouse kitchen from locally sourced produce. In the evening, an optional lite-bite menu, wine and beer are there if you would rather stay in."
+      ]
+    },
+    "roomsIntro": {
+      "eyebrow": "Choose your outlook",
+      "title": "Harbour light or garden quiet.",
+      "text": "Luskentyre and Scarista are larger, superior rooms with harbour views. Borve looks over the mature garden towards the South Harbour. All three have private en-suite shower rooms and can be arranged as a superking or twin when reserved."
+    },
+    "houseIntro": {
+      "eyebrow": "A house with a long memory",
+      "title": "Hospitality here is older than the house.",
+      "text": "The present house was rebuilt in the 1880s, incorporating the ruins and foundations of an earlier farmstead. It was a draper’s and grocer’s, then a church manse. Before that, on this same site, Donald Campbell gave Bonnie Prince Charlie four nights of refuge in 1746.",
+      "quote": "He came to me for safety, so how can I betray him.",
+      "attribution": "Donald Campbell, as quoted in the house history"
+    },
+    "islandIntro": {
+      "eyebrow": "An island, not an obstacle",
+      "title": "Cross the bridge. Keep the view.",
+      "text": "Scalpay is connected to Harris by bridge. The house is a seven-mile scenic drive from Tarbert, the ferry port and hub of Harris—about ten minutes by car. The Harris beaches from Luskentyre to Scarista are around twenty minutes from Tarbert."
+    },
+    "closing": {
+      "title": "Make one good decision.",
+      "text": "Choose your dates and book directly with the house. Breakfast is included; the harbours are already there."
+    }
+  },
+  "rooms": {
+    "title": "A room for the way you wake.",
+    "intro": "Three individually named rooms, each with an en-suite shower room, welcome tray, smart television and Wi-Fi. Choose a harbour outlook or the garden; tell us superking or twin when you reserve.",
+    "items": [
+      {
+        "name": "Luskentyre",
+        "number": "01",
+        "kind": "Superior · Harbour view",
+        "image": "luskentyre",
+        "alt": "The Luskentyre room with a sofa, desk, patterned curtains and a window looking across the harbour to the Harris hills.",
+        "description": "Our super-sized room looks over the North Harbour and Harris hills on one side, and the mature garden and South Harbour on the other. A desk and sofa give you space to spread out a map—or do nothing with the afternoon.",
+        "distinct": "Two outlooks: North Harbour and Harris hills; garden and South Harbour.",
+        "features": ["Superking or twin, on reservation", "Private en-suite with mains-pressure shower", "Desk, sofa and smart television"],
+        "rates": { "2026": { "long": 184, "single": 200 }, "2027": { "long": 194, "single": 210 } }
+      },
+      {
+        "name": "Scarista",
+        "number": "02",
+        "kind": "Superior · Elevated harbour view",
+        "image": "scarista",
+        "alt": "The bright Scarista room with green armchairs, a writing desk and harbour views through tall windows.",
+        "description": "Large and bright, with elevated views over the harbour and the North Harris hills. Local artwork warms the room, and an extra-large en-suite shower room gives the day’s salt and weather somewhere to stay behind.",
+        "distinct": "Elevated harbour views, local artwork and an extra-large en-suite.",
+        "features": ["Superking or twin, on reservation", "Extra-large en-suite shower room", "Local artwork and harbour views"],
+        "rates": { "2026": { "long": 184, "single": 200 }, "2027": { "long": 194, "single": 210 } }
+      },
+      {
+        "name": "Borve",
+        "number": "03",
+        "kind": "Standard · Garden view",
+        "image": "borve",
+        "alt": "The Borve room with a double bed, armchairs and a window over the guest house garden.",
+        "description": "Our standard double is still larger than most, with a view over the mature garden towards the South Harbour. It is the quieter choice for guests who prefer green things to blue things—though both are close.",
+        "distinct": "A garden outlook towards the South Harbour, at the standard-room rate.",
+        "features": ["Superking or twin, on reservation", "Private en-suite shower room", "Garden view towards the South Harbour"],
+        "rates": { "2026": { "long": 170, "single": 190 }, "2027": { "long": 180, "single": 199 } }
+      }
+    ],
+    "included": ["Full cooked breakfast", "Welcome tray", "Wi-Fi and Ethernet", "Smart television with FreeSat and streaming", "Slippers and dressing gowns", "Allocated parking space"],
+    "rateNote": "Rates are per room, per night, and vary. The lower rate applies to stays of two or more nights; single-night stays are requests considered by the owners. Maximum occupancy is two adults. Single occupancy deducts £10 per night. Published rates cover February–November.",
+    "placeholders": {
+      "roomSize": "[Room sizes to be confirmed]",
+      "bedDimensions": "[Bed dimensions to be confirmed]",
+      "accessibility": "[Detailed step-free access information to be confirmed]",
+      "breakfastTimes": "[Breakfast serving times to be confirmed]",
+      "liteBitePrices": "[Lite-bite menu and prices to be confirmed]",
+      "laundryPrices": "[Laundry prices to be confirmed]",
+      "evPrice": "[EV charging price per kWh to be confirmed]"
+    }
+  },
+  "house": {
+    "title": "An open house, in every sense.",
+    "intro": "The address is Victorian. The instinct to welcome a stranger is older.",
+    "story": [
+      {
+        "year": "1746",
+        "title": "A knock at the farmstead door",
+        "paragraphs": [
+          "At dawn on 30 April 1746, Bonnie Prince Charlie and his party arrived by rowing boat from Benbecula. They had disguised themselves as a shipwrecked merchant crew; the Prince was using the name Sinclair. Donald Campbell and his wife knew who their visitors were.",
+          "Donald was loyal to the Hanoverian crown and aware of the £30,000 bounty. He chose hospitality anyway: a warm fire, beds, food, shelter and the use of his boat. When a local minister arrived with men to claim the reward, Donald’s answer was plain: “He came to me for safety, so how can I betray him.”",
+          "The Prince stayed four nights, leaving on 4 May while a boat was secured in Stornoway for his escape to France. Donald later had to go into hiding. A plaque on the wall commemorates the refuge given on this site."
+        ]
+      },
+      {
+        "year": "1880s",
+        "title": "Granite, groceries and a manse",
+        "paragraphs": [
+          "The house that stands here today was rebuilt in the 1880s, incorporating the ruins and foundations of Donald Campbell’s farmstead. It has solid granite walls and a prominent position between Scalpay’s North and South Harbours.",
+          "It became a draper’s and grocer’s, then a Church Manse, and more recently Two Harbours Guest House. The brief names the granite walls and the earlier foundations; it does not inventory the surviving interior features. [Original interior features to be confirmed by the owner]"
+        ]
+      },
+      {
+        "year": "Today",
+        "title": "The same open door",
+        "paragraphs": [
+          "The renovation keeps the historic charm and adds modern comforts: three en-suite rooms, a farmhouse kitchen, a mature garden and a guest patio looking over the dry stone wall to the North Harbour and the Harris hills.",
+          "The house history calls this a tradition of an ‘open house’. We have kept the story specific because it is specific: a named host, a hunted guest, four nights, and a decision that still explains the welcome."
+        ]
+      }
+    ],
+    "plaque": "On this site was the house in which Bonnie Prince Charlie passed some of his days as a fugitive in his own rightful land.",
+    "image": "old-house",
+    "alt": "An earlier exterior view of Two Harbours, showing the white-painted house, garden, dry stone wall and harbour."
+  },
+  "gettingHere": {
+    "title": "The last seven miles are the easy part.",
+    "intro": "Scalpay is joined to Harris by bridge, so there is no island ferry to catch for the final leg. From Tarbert ferry port, it is a seven-mile scenic drive to the house—about ten minutes.",
+    "steps": [
+      { "title": "Reach Harris", "text": "Tarbert is the ferry port and hub of Harris. [Ferry routes, operators, crossing times and booking links to be confirmed]" },
+      { "title": "Cross to Scalpay", "text": "Leave Tarbert on the road across Scalpay Bridge. The bridge connects Scalpay to Harris, joining the three islands of Scalpay, Harris and Lewis." },
+      { "title": "Arrive at the house", "text": "The house is between the island’s North and South Harbours. Check-in is from 4.30pm to 6.30pm; other times are by arrangement. Tell us if you will arrive after 6.30pm so we can be there to meet you." }
+    ],
+    "travelTimes": [
+      { "from": "Tarbert ferry port", "to": "Two Harbours", "time": "About 10 minutes", "note": "7 miles by road, via Scalpay Bridge" },
+      { "from": "Tarbert", "to": "Harris beaches (Luskentyre–Scarista)", "time": "About 20 minutes", "note": "As stated in the property brief" }
+    ],
+    "expect": [
+      "Each room has an allocated parking space at the front of the house.",
+      "The EV charger must be reserved for exclusive use when booking; electricity is charged at cost and settled on departure.",
+      "Cows and sheep roam freely in the crofting community. Leave outdoor shoes in the porch; slippers are provided.",
+      "All guest rooms are up one flight of stairs.",
+      "Detailed directions are provided in the Guest Area after reservation."
+    ],
+    "placeholders": {
+      "addressLine": "[Full postal address / street line to be confirmed]",
+      "directions": "[Turn-by-turn directions from Scalpay Bridge to be confirmed]",
+      "ferry": "[Ferry routes, operators, crossing times and booking links to be confirmed]",
+      "airport": "[Nearest airport and transfer options to be confirmed]",
+      "bus": "[Local bus routes and stops to be confirmed]",
+      "winter": "[Winter travel and weather disruption guidance to be confirmed]",
+      "map": "[Verified map embed or what3words to be confirmed]"
+    }
+  },
+  "enquire": {
+    "title": "Write to the house.",
+    "intro": "For live availability and direct reservation, use the house’s booking page. For a question, a dietary request or a single-night stay, send an enquiry below.",
+    "response": "The brief promises a prompt response to single-night reservation requests. [General enquiry response time to be confirmed]",
+    "formNote": "This static site prepares an email in your own mail app; it does not send or store the form itself. You can also email or telephone us directly.",
+    "success": "Your email app should open with the enquiry ready to send. If it does not, use the email address or telephone number beside the form.",
+    "bookingSteps": [
+      "Check real-time availability for your arrival date and nights.",
+      "Select your room or rooms and continue.",
+      "Enter contact details and request the reservation.",
+      "After confirmation, pay the 25% deposit by secure online card or bank transfer; the balance is due four weeks before arrival."
+    ]
+  },
+  "policies": {
+    "checkIn": "4.30pm–6.30pm; other times by arrangement",
+    "checkOut": "By 10am",
+    "occupancy": "Maximum two adults per room",
+    "children": "No children under 14",
+    "pets": "No pets",
+    "smoking": "No smoking or vaping inside; smoking is permitted in the garden",
+    "deposit": "25% deposit for reservations more than 28 days away; balance due 28 days before arrival. Full payment is required within 28 days of arrival.",
+    "hold": "Online reservations are held for one hour pending deposit or full payment.",
+    "changes": "Date-change requests up to 28 days before arrival are subject to availability; if no alternative is agreed, the booking is cancelled with no deposit refund.",
+    "cancellation": "No-shows are not refunded. Cancellations are not normally refunded, but if the house resells the dates it arranges a pro-rata return of payment.",
+    "dietary": "Dietary requirements can be catered for with sufficient notice.",
+    "food": "No hot food in bedrooms; dining-room facilities, tableware and a fridge are available."
+  },
+  "legal": {
+    "privacy": "[Privacy notice: data controller, lawful bases, retention periods, processor details and guest rights to be approved by the owner]",
+    "cookies": "[Cookie notice: confirm whether any non-essential cookies or analytics are used]",
+    "terms": "[Website terms of use to be approved by the owner]",
+    "accessibility": "[Accessibility statement and feedback route to be published]"
+  },
+  "source": {
+    "brief": "https://www.twoharbours.com/",
+    "studied": ["https://www.twoharbours.com/accommodation.html", "https://www.twoharbours.com/history.html", "https://www.twoharbours.com/contact-us.html", "https://www.twoharbours.com/availability.php", "https://www.twoharbours.com/terms.html", "https://www.twoharbours.com/privacy.html", "https://www.twoharbours.com/gallery.html"],
+    "designReference": "https://flowy-inns.vercel.app/",
+    "note": "Property facts are drawn only from the existing Two Harbours website. Reviews, awards, ratings and promotional statistics have deliberately been omitted."
+  }
+}
