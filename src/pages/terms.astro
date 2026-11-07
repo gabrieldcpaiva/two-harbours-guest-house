@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="Terms" description="Website terms placeholder and published booking-policy summaries for Two Harbours Guest House." path="/terms/">
+  <section class="page-intro container legal-page"><p class="eyebrow">Legal · draft</p><h1>Terms.</h1><p class="lead">The owner’s approved wording is still to come.</p></section>
+  <section class="section container legal-page"><div class="prose"><p><span class="placeholder">{site.legal.terms}</span></p><p>The published booking policies are summarised on the <a href="/enquire/">enquiry page</a>. Reservation, payment and confirmation happen on the existing booking page, not on this marketing site.</p><p>Short-term let licence: {site.licence}. Contact: <a href={`mailto:${site.email}`}>{site.email}</a>.</p></div></section>
+</Base>

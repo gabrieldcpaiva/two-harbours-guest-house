@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import Picture from '../components/Picture.astro';
+import BookingButton from '../components/BookingButton.astro';
+import site from '../data/site.json';
+const h = site.house;
+---
+<Base title="The house" description="The story of Two Harbours: Donald Campbell’s refuge for Bonnie Prince Charlie in 1746, the granite house rebuilt in the 1880s, and the welcome continued today." path="/the-house/">
+  <section class="hero hero--compact" aria-labelledby="house-title">
+    <Picture name="house" alt={site.home.hero.alt} priority widths={[640, 960, 1220]} sizes="100vw" className="hero__image" />
+    <div class="hero__content"><p class="eyebrow">The house</p><h1 id="house-title">{h.title}</h1><p class="hero__intro">{h.intro}</p></div>
+  </section>
+  <section class="section container--narrow" aria-label="The house story">
+    {h.story.map((chapter) => (
+      <article class="story" aria-labelledby={`chapter-${chapter.year.toLowerCase()}`}>
+        <p class="story__year">{chapter.year}</p>
+        <div><h2 id={`chapter-${chapter.year.toLowerCase()}`}>{chapter.title}</h2><div class="prose">{chapter.paragraphs.map((p) => <p>{p.includes('[Original interior') ? <>{p.split('[Original interior')[0]}<span class="placeholder">[Original interior features to be confirmed by the owner]</span></> : p}</p>)}</div></div>
+      </article>
+    ))}
+    <figure class="plaque"><p>“{h.plaque}”</p><figcaption>Words from the commemorative plaque, as recorded in the house history.</figcaption></figure>
+  </section>
+  <section class="section section--paper">
+    <div class="container split">
+      <Picture name="old-house" alt={h.alt} widths={[391]} sizes="(min-width: 64rem) 48vw, 100vw" className="split__image" />
+      <div class="split__copy"><p class="eyebrow">The same site, an earlier view</p><h2>Stone remembers. So do we.</h2><div class="prose"><p>The brief identifies the solid granite walls and the earlier farmstead’s ruins and foundations. It does not describe which interior features survive, so we have left that detail for the owner rather than dressing assumption up as heritage.</p></div><p style="margin-top:2rem"><BookingButton label="Stay at the house" /></p></div>
+    </div>
+  </section>
+</Base>

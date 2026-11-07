@@ -1,0 +1,39 @@
+---
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  name: string;
+  alt: string;
+  widths?: number[];
+  sizes?: string;
+  priority?: boolean;
+  className?: string;
+}
+const { name, alt, widths = [480, 800, 1200], sizes = '(min-width: 900px) 50vw, 100vw', priority = false, className = '' } = Astro.props;
+const files = import.meta.glob<ImageMetadata>('../assets/images/*.{jpg,jpeg,png,webp}', { eager: true, import: 'default' });
+const source = files[`../assets/images/${name}.jpg`];
+if (!source) throw new Error(`Unknown image: ${name}`);
+const availableWidths = [...new Set(widths.filter((w) => w <= source.width))];
+if (!availableWidths.includes(source.width)) availableWidths.push(source.width);
+availableWidths.sort((a, b) => a - b);
+const webp = await Promise.all(availableWidths.map((width) => getImage({ src: source, width, format: 'webp', quality: 78 })));
+const avif = await Promise.all(availableWidths.map((width) => getImage({ src: source, width, format: 'avif', quality: 62 })));
+const fallback = webp[webp.length - 1];
+const srcset = (images: typeof webp) => images.map((image) => `${image.src} ${image.attributes.width}w`).join(', ');
+---
+<picture class={className}>
+  <source type="image/avif" srcset={srcset(avif)} sizes={sizes} />
+  <source type="image/webp" srcset={srcset(webp)} sizes={sizes} />
+  <img
+    src={fallback.src}
+    width={fallback.attributes.width}
+    height={fallback.attributes.height}
+    alt={alt}
+    sizes={sizes}
+    srcset={srcset(webp)}
+    loading={priority ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : 'auto'}
+    decoding="async"
+  />
+</picture>

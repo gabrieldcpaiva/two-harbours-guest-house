@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import BookingButton from '../components/BookingButton.astro';
+import site from '../data/site.json';
+const e = site.enquire;
+---
+<Base title="Enquire or book direct" description="Book directly with Two Harbours Guest House or prepare an email enquiry about rooms, dates, dietary requirements or a single-night stay on Scalpay." path="/enquire/">
+  <section class="page-intro">
+    <div class="container page-intro__grid">
+      <div><p class="eyebrow">Enquire or book direct</p><h1>{e.title}</h1><p class="lead">{e.intro}</p></div>
+      <div class="page-intro__aside"><p><BookingButton label="Check live availability" /></p><p class="note" style="margin-top:1rem">The booking page opens on the existing Two Harbours website. This new site does not take payment.</p></div>
+    </div>
+  </section>
+  <section class="section section--paper" aria-labelledby="form-title">
+    <div class="container enquire-grid">
+      <div>
+        <h2 id="form-title" style="font-size:clamp(2.2rem,4vw,3.5rem);margin-bottom:1rem">An enquiry, without the ceremony.</h2>
+        <p class="note" style="margin-bottom:1.5rem">{e.formNote} All fields are required unless marked optional.</p>
+        <form class="enquiry-form" data-enquiry-form novalidate hidden>
+          <div class="form-row">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" /><span class="field-error" id="name-error"></span></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error" /><span class="field-error" id="email-error"></span></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="arrival">Preferred arrival</label><input id="arrival" name="arrival" type="date" required aria-describedby="arrival-hint arrival-error" /><span class="field-hint" id="arrival-hint">A preference, not a confirmed reservation.</span><span class="field-error" id="arrival-error"></span></div>
+            <div class="field"><label for="nights">Nights</label><input id="nights" name="nights" type="number" min="1" max="28" step="1" value="2" required aria-describedby="nights-error" /><span class="field-error" id="nights-error"></span></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="room">Room</label><select id="room" name="room"><option value="No preference">No preference</option>{site.rooms.items.map((room) => <option value={room.name}>{room.name}</option>)}</select></div>
+            <div class="field"><label for="guests">Guests</label><select id="guests" name="guests" aria-describedby="guests-hint"><option value="1">1 adult</option><option value="2" selected>2 adults</option></select><span class="field-hint" id="guests-hint">Maximum two adults per room.</span></div>
+          </div>
+          <div class="field"><label for="message">Anything we should know? <span class="note">(optional)</span></label><textarea id="message" name="message" rows="5" maxlength="2000" aria-describedby="message-hint"></textarea><span class="field-hint" id="message-hint">Dietary requirements, arrival time, or a question. Please do not include payment details.</span></div>
+          <div class="form-status" data-form-status role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
+          <div><button class="button" type="submit">Prepare email enquiry <span aria-hidden="true">→</span></button></div>
+          <p class="note">Preparing an enquiry does not check availability or reserve a room. Nothing is sent until you send the email from your mail app.</p>
+        </form>
+        <noscript><p class="note" style="margin-top:1rem">JavaScript is off. Please email <a href={`mailto:${site.email}`}>{site.email}</a> or telephone <a href={site.phoneHref}>{site.phone}</a> instead.</p></noscript>
+      </div>
+      <aside class="contact-card" aria-labelledby="contact-title">
+        <h2 id="contact-title">Prefer a person?</h2>
+        <p><a href={`mailto:${site.email}`}>{site.email}</a><br /><a href={site.phoneHref}>{site.phone}</a></p>
+        <p class="note">{e.response.split(' [General')[0]} <span class="placeholder">[General enquiry response time to be confirmed]</span></p>
+        <hr class="rule" style="margin-block:1.5rem" />
+        <h3 style="font-size:1.8rem;margin-bottom:1rem">How direct booking works</h3>
+        <ol class="booking-steps">{e.bookingSteps.map((step) => <li>{step}</li>)}</ol>
+        <p class="note" style="margin-top:1.2rem">Single-night requests are considered by the owners. The brief promises a prompt response to those requests.</p>
+      </aside>
+    </div>
+  </section>
+  <section class="section container--narrow" aria-labelledby="policies-title">
+    <p class="eyebrow">Plain terms</p><h2 id="policies-title" style="margin-bottom:2rem">Before you commit.</h2>
+    <dl class="policy-grid">
+      <div><dt>Arrival & departure</dt><dd>{site.policies.checkIn}. Check-out {site.policies.checkOut.toLowerCase()}.</dd></div>
+      <div><dt>Deposit & balance</dt><dd>{site.policies.deposit}</dd></div>
+      <div><dt>Changes</dt><dd>{site.policies.changes}</dd></div>
+      <div><dt>Cancellation</dt><dd>{site.policies.cancellation}</dd></div>
+      <div><dt>Who can stay</dt><dd>{site.policies.occupancy}. {site.policies.children}. {site.policies.pets}.</dd></div>
+      <div><dt>Dietary needs</dt><dd>{site.policies.dietary}</dd></div>
+    </dl>
+    <p class="note" style="margin-top:2rem">These are summaries of the published property terms. The existing booking page and the owner’s confirmation govern the reservation. <a href="/terms/">Legal placeholders</a>.</p>
+  </section>
+  <script is:inline src="/scripts/enquiry.js" defer></script>
+</Base>
