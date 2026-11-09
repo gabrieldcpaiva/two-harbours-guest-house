@@ -5,16 +5,17 @@ export function Photo({ id, alt, sizes = '100vw', className = '', priority = fal
   const image = manifest[id];
   const avif = image.widths.map((w) => `/images/${id}-${w}.avif ${w}w`).join(', ');
   const webp = image.widths.map((w) => `/images/${id}-${w}.webp ${w}w`).join(', ');
-  const mid = image.widths[Math.min(2, image.widths.length - 1)];
+  const largest = image.widths[image.widths.length - 1];
   return (
     <picture>
       <source type="image/avif" srcSet={avif} sizes={sizes} />
       <source type="image/webp" srcSet={webp} sizes={sizes} />
       <img
-        src={`/images/${id}-${mid}.webp`}
+        src={`/images/${id}-${largest}.webp`}
         alt={alt}
         width={image.width}
         height={image.height}
+        sizes={sizes}
         className={className}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
@@ -27,14 +28,14 @@ export function Photo({ id, alt, sizes = '100vw', className = '', priority = fal
 
 export function Button({ href, children, className = '', compact = false }) {
   const classNames = `group inline-flex rounded-full transition-transform duration-300 ease-magnetic hover:scale-[1.03] focus-visible:scale-[1.03] ${className}`;
-  const pad = compact ? 'px-4 py-2.5' : 'px-6 py-3';
+  const pad = compact ? 'px-3 py-1.5 text-base font-semibold' : 'px-5 py-3 text-base font-semibold';
   const inner = (
-    <span className="relative inline-flex overflow-hidden rounded-full bg-[#CC5833] text-[#F2F0E9]">
+    <span className="relative inline-flex overflow-hidden rounded-full bg-[#A9492A] text-[#F2F0E9]">
       <span
         aria-hidden="true"
         className="absolute inset-0 translate-y-full bg-[#2E4036] transition-transform duration-300 ease-magnetic group-hover:translate-y-0 group-focus-visible:translate-y-0"
       />
-      <span className={`relative inline-flex items-center gap-2 whitespace-nowrap font-display text-[1.25rem] font-bold leading-none ${pad}`}>
+      <span className={`relative inline-flex items-center gap-2 whitespace-nowrap font-display leading-none ${pad}`}>
         {children}
         <span className="sr-only"> (opens in a new tab)</span>
       </span>

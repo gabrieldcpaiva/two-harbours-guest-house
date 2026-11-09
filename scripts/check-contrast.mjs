@@ -17,9 +17,8 @@ const pairs = [
   ['Cream on charcoal', '#F2F0E9', '#1A1A1A', 4.5],
   ['Moss on cream', '#2E4036', '#F2F0E9', 4.5],
   ['Cream on moss', '#F2F0E9', '#2E4036', 4.5],
-  ['Cream on clay, Book Direct, large text only', '#F2F0E9', '#CC5833', 3],
-  ['Clay on cream, not used for small text', '#CC5833', '#F2F0E9', 3],
-  ['Clay on charcoal, not used for small text', '#CC5833', '#1A1A1A', 3],
+  ['Cream on Book Direct clay #A9492A', '#F2F0E9', '#A9492A', 4.5],
+  ['Original clay #CC5833 on cream, not used for text', '#CC5833', '#F2F0E9', 3],
 ];
 
 let failures = 0;
@@ -30,7 +29,6 @@ for (const [name, fg, bg, minimum] of pairs) {
   if (!ok) failures += 1;
 }
 
-console.log('Unused, and kept unused: clay on moss, charcoal on moss, charcoal on exact clay.');
-console.log('Clay #CC5833 is the Book Direct fill. Its label is cream at 1.25rem / 700, which is large text.');
-console.log('IBM Plex Mono is limited to the 01 / 02 / 03 step labels.');
+console.log('Book Direct fill is #A9492A, Clay #CC5833 darkened until cream text clears 4.5:1 at normal size.');
+console.log('Original Clay stays in the palette and is not used for small text.');
 if (failures) process.exitCode = 1;

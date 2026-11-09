@@ -8,7 +8,7 @@ export function Proof() {
         <div className="lg:col-span-5">
           <Eyebrow>Why guests return</Eyebrow>
           <h2 id="proof-heading" className="mt-4 font-sans text-4xl font-extrabold tracking-[-0.04em] md:text-6xl">
-            Proof, before the story.
+            In their words.
           </h2>
           <p className="mt-6 max-w-[42ch] text-base leading-relaxed">
             Tripadvisor Travellers’ Choice Award 2026. Consistently 5-star on Tripadvisor. The house currently shows an overall 5.0 from 190 traveller reviews.

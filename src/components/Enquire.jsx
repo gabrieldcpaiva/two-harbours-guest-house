@@ -8,7 +8,9 @@ function validate(values) {
   const errors = {};
   if (!values.name.trim()) errors.name = 'Enter your name.';
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) errors.email = 'Enter a valid email address.';
-  if (!values.arrival) errors.arrival = 'Choose a preferred arrival date.';
+  if (!/^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/.test(values.arrival.trim())) {
+    errors.arrival = 'Enter the arrival date as DD/MM/YYYY.';
+  }
   if (!values.nights || Number(values.nights) < 1) errors.nights = 'Enter the number of nights.';
   if (!values.room) errors.room = 'Choose a room.';
   if (!values.guests) errors.guests = 'Choose the number of guests.';
@@ -105,24 +107,24 @@ export function Enquire() {
           <p className="mt-4 max-w-[48ch] text-base leading-relaxed">
             For live availability and direct reservation, use the house’s booking page. For a question, a dietary request or a single-night stay, this form prepares an email in your own mail app. It does not send or store the form itself. All fields are required unless marked optional.
           </p>
-          <form className="mt-8 space-y-5" noValidate onSubmit={onSubmit}>
+          <form className="mt-8 space-y-5" lang="en-GB" noValidate onSubmit={onSubmit}>
             <Field id="name" label="Your name" error={errors.name}>
-              <input id="name" name="name" autoComplete="name" className="field" value={values.name} onChange={set('name')} aria-invalid={Boolean(errors.name)} aria-describedby={described('name')} />
+              <input id="name" name="name" lang="en-GB" autoComplete="name" className="field" value={values.name} onChange={set('name')} aria-invalid={Boolean(errors.name)} aria-describedby={described('name')} />
             </Field>
             <Field id="email" label="Email" error={errors.email}>
-              <input id="email" name="email" type="email" autoComplete="email" className="field" value={values.email} onChange={set('email')} aria-invalid={Boolean(errors.email)} aria-describedby={described('email')} />
+              <input id="email" name="email" lang="en-GB" type="email" autoComplete="email" className="field" value={values.email} onChange={set('email')} aria-invalid={Boolean(errors.email)} aria-describedby={described('email')} />
             </Field>
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field id="arrival" label="Preferred arrival" error={errors.arrival}>
-                <input id="arrival" name="arrival" type="date" className="field" value={values.arrival} onChange={set('arrival')} aria-invalid={Boolean(errors.arrival)} aria-describedby={described('arrival')} />
+              <Field id="arrival" label="Preferred arrival (DD/MM/YYYY)" error={errors.arrival}>
+                <input id="arrival" name="arrival" lang="en-GB" type="text" inputMode="numeric" placeholder="DD/MM/YYYY" autoComplete="off" className="field" value={values.arrival} onChange={set('arrival')} aria-invalid={Boolean(errors.arrival)} aria-describedby={described('arrival')} />
               </Field>
               <Field id="nights" label="Nights" error={errors.nights}>
-                <input id="nights" name="nights" type="number" min="1" inputMode="numeric" className="field" value={values.nights} onChange={set('nights')} aria-invalid={Boolean(errors.nights)} aria-describedby={described('nights')} />
+                <input id="nights" name="nights" lang="en-GB" type="number" min="1" inputMode="numeric" className="field" value={values.nights} onChange={set('nights')} aria-invalid={Boolean(errors.nights)} aria-describedby={described('nights')} />
               </Field>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               <Field id="room" label="Room" error={errors.room}>
-                <select id="room" name="room" className="field" value={values.room} onChange={set('room')} aria-invalid={Boolean(errors.room)} aria-describedby={described('room')}>
+                <select id="room" name="room" lang="en-GB" className="field" value={values.room} onChange={set('room')} aria-invalid={Boolean(errors.room)} aria-describedby={described('room')}>
                   <option value="">Choose a room</option>
                   <option>Luskentyre</option>
                   <option>Scarista</option>
@@ -131,7 +133,7 @@ export function Enquire() {
                 </select>
               </Field>
               <Field id="guests" label="Guests" error={errors.guests}>
-                <select id="guests" name="guests" className="field" value={values.guests} onChange={set('guests')} aria-invalid={Boolean(errors.guests)} aria-describedby={described('guests')}>
+                <select id="guests" name="guests" lang="en-GB" className="field" value={values.guests} onChange={set('guests')} aria-invalid={Boolean(errors.guests)} aria-describedby={described('guests')}>
                   <option value="">Number of adults</option>
                   <option>1 adult</option>
                   <option>2 adults</option>
@@ -139,7 +141,7 @@ export function Enquire() {
               </Field>
             </div>
             <Field id="message" label="Anything we should know? (optional)" error="">
-              <textarea id="message" name="message" rows="4" className="field" value={values.message} onChange={set('message')} />
+              <textarea id="message" name="message" lang="en-GB" rows="4" className="field" value={values.message} onChange={set('message')} />
             </Field>
             <QuietButton type="submit">Prepare email enquiry</QuietButton>
             <p role="status" className="text-sm leading-relaxed">{status}</p>

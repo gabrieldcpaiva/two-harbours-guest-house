@@ -1,6 +1,5 @@
 import { Breakfast } from './components/Breakfast.jsx';
 import { Enquire } from './components/Enquire.jsx';
-import { Features } from './components/Features.jsx';
 import { Footer } from './components/Footer.jsx';
 import { Gallery } from './components/Gallery.jsx';
 import { Hero } from './components/Hero.jsx';
@@ -32,7 +31,6 @@ export default function App() {
       <main id="main" tabIndex={-1}>
         <Hero />
         <Proof />
-        <Features />
         <Gallery />
         <Manifesto />
         <Protocol />

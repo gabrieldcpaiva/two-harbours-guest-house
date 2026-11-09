@@ -39,24 +39,6 @@ export const quotes = [
   },
 ];
 
-export const places = [
-  {
-    id: 'scalpay',
-    title: 'Scalpay',
-    body: 'Where you stay. The house sits between the North and South Harbours, joined to Harris by bridge.',
-  },
-  {
-    id: 'harris',
-    title: 'Harris',
-    body: 'Beaches from Luskentyre to Scarista, about twenty minutes from Tarbert.',
-  },
-  {
-    id: 'lewis',
-    title: 'Lewis',
-    body: 'North of Harris. Stornoway by air, or the Ullapool ferry, then the road south to Scalpay.',
-  },
-];
-
 export const campbell = 'He came to me for safety, so how can I betray him.';
 
 export const plaque =
@@ -187,39 +169,9 @@ export const gallery = [
     caption: 'Evening light on the shore.',
   },
   {
-    id: 'sound',
-    alt: 'Sunset over a wide stretch of water, with a rocky foreground, low islands and hills.',
-    caption: 'The water at sunset.',
-  },
-  {
-    id: 'stone',
-    alt: 'A standing stone in coastal grass at dusk, with water and hills beyond.',
-    caption: 'Coastal grass on Scalpay.',
-  },
-  {
     id: 'bridge',
     alt: 'The bridge between Harris and Scalpay, seen across the sound with rocky green shores on either side.',
     caption: 'Scalpay Bridge.',
-  },
-  {
-    id: 'luskentyre-light',
-    alt: 'Sunlight across the Luskentyre room, with the sofa, the bed and a window to the harbour.',
-    caption: 'Luskentyre, harbour light.',
-  },
-  {
-    id: 'scarista-bed',
-    alt: 'The Scarista room with a large bed, green armchairs and tall windows over the harbour.',
-    caption: 'Scarista, elevated and bright.',
-  },
-  {
-    id: 'borve-alt',
-    alt: 'The Borve room from the doorway, with a double bed, armchairs and a window toward the garden.',
-    caption: 'Borve, garden quiet.',
-  },
-  {
-    id: 'dining',
-    alt: 'The breakfast room laid with wooden tables, place settings and a painted Hebridean landscape on the walls.',
-    caption: 'The breakfast room.',
   },
   {
     id: 'breakfast',

@@ -118,6 +118,11 @@ section[id] {
   border-width: 2px;
 }
 
+.field::placeholder {
+  color: #2e4036;
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
