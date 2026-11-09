@@ -1,8 +1,0 @@
----
-import Base from '../layouts/Base.astro';
-import site from '../data/site.json';
----
-<Base title="Privacy" description="Privacy information placeholder for Two Harbours Guest House." path="/privacy/">
-  <section class="page-intro container legal-page"><p class="eyebrow">Legal · draft</p><h1>Privacy.</h1><p class="lead">A plain notice belongs here before launch.</p></section>
-  <section class="section container legal-page"><div class="prose"><p>The existing property brief says guest information is used to process bookings, carry out contractual obligations, seek views, notify changes and send requested communications. It says information is not sold or rented, or shared for third-party marketing.</p><p>This new static site’s enquiry form only prepares an email in the guest’s own mail app. It does not submit to a server or store entries. The external booking page has its own handling.</p><p><span class="placeholder">{site.legal.privacy}</span></p><p><span class="placeholder">{site.legal.cookies}</span></p><p>Questions: <a href={`mailto:${site.email}`}>{site.email}</a>.</p></div></section>
-</Base>

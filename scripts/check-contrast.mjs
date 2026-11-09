@@ -1,30 +1,36 @@
-// Checks the declared text/background pairs used by the design system.
-const pairs = [
-  ['Body on paper', '#24302f', '#f5f4ef'],
-  ['Muted on paper', '#56615f', '#f5f4ef'],
-  ['Muted on deep paper', '#56615f', '#ecebe4'],
-  ['Button text', '#fffefa', '#263b3a'],
-  ['Footer text', '#f5f4ef', '#1b2c2b'],
-  ['Footer muted', '#c5d2cc', '#1b2c2b'],
-  ['Dark-band text', '#d4dfda', '#263b3a'],
-  ['Placeholder', '#715b27', '#eee7d4'],
-  ['Footer placeholder', '#f0dfb2', '#34443b'],
-  ['Error text', '#8a2f24', '#f7e9e5'],
-  ['Success text', '#2d4a34', '#e8eee6'],
-  ['Hero light text on darkest scrim', '#f0f3ef', '#102021'],
-  ['Hero text on lightest photo through 70% scrim', '#f0f3ef', '#586364'],
-];
-const luminance = (hex) => {
-  const c = hex.replace('#', '').match(/.{2}/g).map((v) => parseInt(v, 16) / 255).map((v) => v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
-  return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+const lum = (hex) => {
+  const channels = hex.replace('#', '').match(/.{2}/g).map((value) => {
+    const channel = parseInt(value, 16) / 255;
+    return channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
 };
+
+const ratio = (a, b) => {
+  const left = lum(a);
+  const right = lum(b);
+  return (Math.max(left, right) + 0.05) / (Math.min(left, right) + 0.05);
+};
+
+const pairs = [
+  ['Charcoal on cream', '#1A1A1A', '#F2F0E9', 4.5],
+  ['Cream on charcoal', '#F2F0E9', '#1A1A1A', 4.5],
+  ['Moss on cream', '#2E4036', '#F2F0E9', 4.5],
+  ['Cream on moss', '#F2F0E9', '#2E4036', 4.5],
+  ['Cream on clay, Book Direct, large text only', '#F2F0E9', '#CC5833', 3],
+  ['Clay on cream, not used for small text', '#CC5833', '#F2F0E9', 3],
+  ['Clay on charcoal, not used for small text', '#CC5833', '#1A1A1A', 3],
+];
+
 let failures = 0;
-for (const [name, fg, bg] of pairs) {
-  const a = luminance(fg), b = luminance(bg);
-  const ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-  const ok = ratio >= 4.5;
-  console.log(`${ok ? 'PASS' : 'FAIL'} ${ratio.toFixed(2)}:1 ${name}`);
-  if (!ok) failures++;
+for (const [name, fg, bg, minimum] of pairs) {
+  const value = ratio(fg, bg);
+  const ok = value + 0.001 >= minimum;
+  console.log(`${ok ? 'PASS' : 'FAIL'} ${value.toFixed(2)}:1 (need ${minimum}) ${name}`);
+  if (!ok) failures += 1;
 }
-console.log('Note: photographic heroes also use a dark gradient; browser axe checks the rendered pages.');
+
+console.log('Unused, and kept unused: clay on moss, charcoal on moss, charcoal on exact clay.');
+console.log('Clay #CC5833 is the Book Direct fill. Its label is cream at 1.25rem / 700, which is large text.');
+console.log('IBM Plex Mono is limited to the 01 / 02 / 03 step labels.');
 if (failures) process.exitCode = 1;

@@ -1,8 +1,0 @@
----
-import Base from '../layouts/Base.astro';
-import site from '../data/site.json';
----
-<Base title="Accessibility" description="Accessibility statement placeholder for Two Harbours Guest House." path="/accessibility/">
-  <section class="page-intro container legal-page"><p class="eyebrow">Accessibility · draft</p><h1>Everyone should find the door.</h1><p class="lead">The site is built to be readable, keyboard-navigable and comfortable with reduced motion.</p></section>
-  <section class="section container legal-page"><div class="prose"><p>Pages use semantic landmarks, a skip link, visible focus styles, labelled form fields and text alternatives for photographs. The design targets WCAG AA text contrast and does not require animation.</p><p>The property brief states that all guest rooms are up one flight of stairs. It does not provide a full physical-access description.</p><p><span class="placeholder">{site.legal.accessibility}</span></p><p><span class="placeholder">{site.rooms.placeholders.accessibility}</span></p><p>For access questions, email <a href={`mailto:${site.email}`}>{site.email}</a> or call <a href={site.phoneHref}>{site.phone}</a>.</p></div></section>
-</Base>

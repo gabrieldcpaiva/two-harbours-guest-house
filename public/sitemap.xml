@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.twoharbours.com/</loc></url>
-  <url><loc>https://www.twoharbours.com/rooms/</loc></url>
-  <url><loc>https://www.twoharbours.com/the-house/</loc></url>
-  <url><loc>https://www.twoharbours.com/getting-here/</loc></url>
-  <url><loc>https://www.twoharbours.com/enquire/</loc></url>
-  <url><loc>https://www.twoharbours.com/privacy/</loc></url>
-  <url><loc>https://www.twoharbours.com/terms/</loc></url>
-  <url><loc>https://www.twoharbours.com/accessibility/</loc></url>
+  <url>
+    <loc>https://www.twoharbours.com/</loc>
+  </url>
 </urlset>

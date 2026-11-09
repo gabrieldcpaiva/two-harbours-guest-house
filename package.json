@@ -1,43 +1,40 @@
 {
   "name": "two-harbours-guest-house",
-  "version": "0.1.0",
-  "description": "A quiet, static-first marketing website for Two Harbours Guest House, Scalpay.",
-  "scripts": {
-    "dev": "astro dev --host 0.0.0.0 --port 3000",
-    "build": "astro build",
-    "preview": "astro preview --host 0.0.0.0 --port 3000",
-    "check": "astro check",
-    "contrast": "node scripts/check-contrast.mjs",
-    "placeholders": "node scripts/list-placeholders.mjs",
-    "test:site": "node scripts/check-site.mjs",
-    "test:browser": "node scripts/browser-check.mjs",
-    "images": "node scripts/optimise-images.mjs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gabrieldcpaiva/two-harbours-guest-house.git"
-  },
-  "bugs": {
-    "url": "https://github.com/gabrieldcpaiva/two-harbours-guest-house/issues"
-  },
-  "homepage": "https://github.com/gabrieldcpaiva/two-harbours-guest-house#readme",
-  "type": "module",
+  "version": "0.2.0",
+  "description": "Cinematic landing page for Two Harbours Guest House, Scalpay.",
   "private": true,
-  "dependencies": {
-    "@fontsource/cormorant-garamond": "^5.3.0",
-    "@fontsource/dm-sans": "^5.3.0",
-    "astro": "^7.4.7"
-  },
-  "devDependencies": {
-    "@astrojs/check": "^0.9.12",
-    "@axe-core/playwright": "^4.14.0",
-    "@sparticuz/chromium": "^153.0.0",
-    "playwright": "^1.65.0",
-    "sharp": "^0.35.5",
-    "typescript": "^5.9.3"
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 3000",
+    "lint": "eslint src",
+    "images": "node scripts/optimise-images.mjs",
+    "contrast": "node scripts/check-contrast.mjs",
+    "verify": "node scripts/verify.mjs"
   },
   "engines": {
     "node": ">=22.23.4",
     "npm": ">=9.6.5"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.511.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@vitejs/plugin-react": "^4.5.2",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.28.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^16.2.0",
+    "playwright": "^1.53.0",
+    "postcss": "^8.5.4",
+    "sharp": "^0.34.2",
+    "tailwindcss": "3.4.17",
+    "vite": "^6.3.5"
   }
 }
