@@ -111,6 +111,9 @@ export function Footer() {
           </OwnerNote>
         </section>
       </div>
+      <p className="mx-auto mt-12 max-w-6xl border-t border-[#F2F0E9]/20 pt-6 text-xs leading-relaxed text-[#F2F0E9]">
+        Concept redesign by Coco Pixel (creative direction & copy) and Ferro (build), with Gabriel Paiva.
+      </p>
     </footer>
   );
 }

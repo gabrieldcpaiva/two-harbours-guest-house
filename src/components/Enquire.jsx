@@ -65,7 +65,7 @@ export function Enquire() {
     ].join('\n');
     const href = `mailto:${EMAIL}?subject=${encodeURIComponent('Enquiry for Two Harbours Guest House')}&body=${encodeURIComponent(body)}`;
     setMailto(href);
-    setStatus('Your email app should open with the enquiry ready to send. If it does not, use the email or telephone beside the form.');
+    setStatus('Nothing has been sent from this page. A draft should open in your email app, addressed to enquiries@twoharbours.com. If it does not, use the email beside the form, or Book Direct.');
     window.location.href = href;
   };
 
@@ -107,7 +107,7 @@ export function Enquire() {
           <p className="mt-4 max-w-[48ch] text-base leading-relaxed">
             For live availability and direct reservation, use the house’s booking page. For a question, a dietary request or a single-night stay, this form prepares an email in your own mail app. It does not send or store the form itself. All fields are required unless marked optional.
           </p>
-          <form className="mt-8 space-y-5" lang="en-GB" noValidate onSubmit={onSubmit}>
+          <form className="mt-8 space-y-5" lang="en-GB" action={`mailto:${EMAIL}`} method="post" encType="text/plain" noValidate onSubmit={onSubmit}>
             <Field id="name" label="Your name" error={errors.name}>
               <input id="name" name="name" lang="en-GB" autoComplete="name" className="field" value={values.name} onChange={set('name')} aria-invalid={Boolean(errors.name)} aria-describedby={described('name')} />
             </Field>
